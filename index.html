@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body>
+	<script type="text/javascript">
+		function chessboard() {
+    var Table = document.createElement('table'),
+        l = ['','A','B','C','D','E','F','G','H',''],
+        black1 = ['8','&#9820;','&#9822;','&#9821;','&#9819;','&#9818;','&#9821;','&#9822;','&#9820;','8'],
+        white1 = ['1','&#9814;','&#9816;','&#9815;','&#9813;','&#9812;','&#9815;','&#9816;','&#9814;','1'],
+        black2 = ['7','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','7'],
+        white2 = ['2','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','2'];
+    for (var i = 0, a = 9; i < 10, a >= 0; i++, a--) {
+        var Tr = Table.insertRow(i);
+        for (var j = 0; j < 10; j++) {
+            var Td = Tr.insertCell(j);
+                        switch (i) {
+                case 0:
+                    Td.innerText = l[j];
+                    break;
+                case 1:
+                    Td.innerHTML = black1[j];
+                    break;
+                case 2:
+                    Td.innerHTML = black2[j];
+                    break;
+                case 7:
+                    Td.innerHTML = white2[j];
+                    break;
+                case 8:
+                    Td.innerHTML = white1[j];
+                    break;
+                case 9:
+                    Td.innerText = l[j];
+                    break;
+                default:
+                    if (j === 0 || j === 9) {
+                        Td.innerHTML = a;
+                    }
+                    break;
+            }
+        }
+    }
+    document.body.appendChild(Table);
+};
+chessboard();
+	</script>
+</body>
+</html>
